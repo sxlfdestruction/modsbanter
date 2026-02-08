@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanterVR Plugin Manager - bantervrplugin.com</title>
+    <meta name="description"
+        content="Official BanterVR plugin management platform at bantervrplugin.com. Trusted by thousands of users worldwide.">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <!-- <link rel="icon" type="image/png" href="favicon_v2.png"> -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <svg class="brand-icon" viewBox="0 0 40 40" width="40" height="40">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" opacity="0.2" />
+                    <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="url(#logoGradient)" />
+                    <circle cx="20" cy="20" r="4" fill="#fff" />
+                </svg>
+                <span class="brand-name">Banter<span class="brand-accent">VR</span></span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#plugins" class="nav-link">Plugins</a>
+                <a href="https://store.steampowered.com/app/2564460/Banter" target="_blank" class="nav-link">Steam</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#download" class="btn-nav btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge-wrapper">
+                    <span class="hero-badge-pill">
+                        <span class="badge-dot"></span>
+                        #1 BanterVR Plugin Platform
+                    </span>
+                </div>
+
+                <h1 class="hero-title">
+                    Unlock the Power of <br>
+                    <span class="gradient-text-hero">BanterVR Plugins</span>
+                </h1>
+
+                <p class="hero-description">
+                    Transform your VR experience with premium mods. Join
+                    <span class="highlight-text">120,000+ users</span>
+                    worldwide in our growing community.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#download" class="btn-hero-glow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+                        </svg>
+                        Download Now
+                    </a>
+                    <a href="https://store.steampowered.com/app/2564460/Banter" target="_blank" class="btn-hero-glass">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.8">
+                            <path
+                                d="M11.979 0C5.666 0 .506 4.908.034 11.137l6.095 8.905c1.29-.446 2.508-.344 3.793.18.57.234 1.13.57 1.636 1.05.514.484.9.99 1.146 1.547.25.56.37 1.124.363 1.695l-.004.576.012.046c4.254-.153 7.85-2.28 9.39-5.713 1.88-4.202.946-9.176-2.275-12.397C17.96 4.8 15.06 3.03 11.98 3.03zm.06 4.67c2.97 0 5.617 1.597 6.96 4.195 1.343 2.597 1.09 5.712-.663 8.086-1.753 2.373-4.664 3.49-7.518 2.887l-.46-.097.03-.68c.036-1.077-.282-2.138-.916-3.048-.634-.91-1.528-1.58-2.55-1.91l-.65-.18.23-.96c.22-.924-.03-1.895-.66-2.617-.628-.72-1.548-1.12-2.502-1.087l-.44.02L.89 6.27c2.316-3.085 6.007-4.8 9.948-4.62 3.94.178 7.42 2.27 9.29 5.58 1.87 3.31 1.7 7.37-.46 10.51-2.16 3.14-5.83 4.82-9.62 4.41-.67-.07-1.33-.23-1.97-.47l.18-.73c.18-.72-.03-1.48-.52-2.04-.49-.56-1.21-.87-1.95-.84l-.19.01c.21-.52.54-1 .96-1.39.81-.76 1.88-1.11 2.94-.96 1.06.15 2 .74 2.62 1.63.62.89.87 1.97.7 3.04l-.06.74.74.1c3.15.42 6.2-.95 7.9-3.55 1.7-2.6 1.8-5.91.24-8.62C17.18 8.06 14.28 6.4 11.08 6.6c-3.2.21-6.09 2.1-7.57 4.96l-2.02-.92c1.7-3.28 5.02-5.46 8.7-5.7 3.68-.24 7.24 1.51 9.3 4.58z" />
+                        </svg>
+                        Play on Steam
+                    </a>
+                </div>
+
+                <div class="hero-stat-pills">
+                    <div class="stat-pill stat-pill-gold">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
+                        <span>10 Premium Mods</span>
+                    </div>
+                    <div class="stat-pill stat-pill-green">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Active Community</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-glow-effect"></div>
+
+                <!-- Main Center Card -->
+                <div class="floating-card hero-card-main">
+                    <div class="card-glow-internal"></div>
+                    <div class="card-content">
+                        <div class="card-header-lg">
+                            <div class="card-icon-lg">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="card-text">
+                                <span class="card-title-lg">BanterVR Tools</span>
+                                <span class="card-subtitle-lg">SYSTEM ACTIVE</span>
+                            </div>
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Satellite Cards -->
+                <!-- Cloud Sync -->
+                <div class="floating-card hero-card-sub card-pos-1">
+                    <div class="card-content-sm">
+                        <span class="card-icon-sm icon-pink">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                            </svg>
+                        </span>
+                        <span>Cloud Sync</span>
+                    </div>
+                </div>
+
+                <!-- World Builder -->
+                <div class="floating-card hero-card-sub card-pos-2">
+                    <div class="card-content-sm">
+                        <span class="card-icon-sm icon-purple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span>World Builder</span>
+                    </div>
+                </div>
+
+                <!-- High Performance -->
+                <div class="floating-card hero-card-sub card-pos-3">
+                    <div class="card-content-sm">
+                        <span class="card-icon-sm icon-green">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                            </svg>
+                        </span>
+                        <span>High Performance</span>
+                    </div>
+                </div>
+
+                <!-- Verified Safe -->
+                <div class="floating-card hero-card-sub card-pos-4">
+                    <div class="card-content-sm">
+                        <span class="card-icon-sm icon-blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </span>
+                        <span>Verified Safe</span>
+                    </div>
+                </div>
+
+                <!-- Social Hub -->
+                <div class="floating-card hero-card-sub card-pos-5">
+                    <div class="card-content-sm">
+                        <span class="card-icon-sm icon-indigo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Social Hub</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section / How to Install -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge modern-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right: 6px; vertical-align: text-bottom;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                    Quick Guide
+                </span>
+                <h2 class="section-title">How to <span class="gradient-text modern-gradient">Install</span></h2>
+                <p class="section-description">Get started with BanterVR in 3 simple steps</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Proper Steam Icon -->
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.979 0C5.666 0 .506 4.908.034 11.137l6.095 8.905c1.29-.446 2.508-.344 3.793.18.57.234 1.13.57 1.636 1.05.514.484.9.99 1.146 1.547.25.56.37 1.124.363 1.695l-.004.576.012.046c4.254-.153 7.85-2.28 9.39-5.713 1.88-4.202.946-9.176-2.275-12.397C17.96 4.8 15.06 3.03 11.98 3.03zm.06 4.67c2.97 0 5.617 1.597 6.96 4.195 1.343 2.597 1.09 5.712-.663 8.086-1.753 2.373-4.664 3.49-7.518 2.887l-.46-.097.03-.68c.036-1.077-.282-2.138-.916-3.048-.634-.91-1.528-1.58-2.55-1.91l-.65-.18.23-.96c.22-.924-.03-1.895-.66-2.617-.628-.72-1.548-1.12-2.502-1.087l-.44.02L.89 6.27c2.316-3.085 6.007-4.8 9.948-4.62 3.94.178 7.42 2.27 9.29 5.58 1.87 3.31 1.7 7.37-.46 10.51-2.16 3.14-5.83 4.82-9.62 4.41-.67-.07-1.33-.23-1.97-.47l.18-.73c.18-.72-.03-1.48-.52-2.04-.49-.56-1.21-.87-1.95-.84l-.19.01c.21-.52.54-1 .96-1.39.81-.76 1.88-1.11 2.94-.96 1.06.15 2 .74 2.62 1.63.62.89.87 1.97.7 3.04l-.06.74.74.1c3.15.42 6.2-.95 7.9-3.55 1.7-2.6 1.8-5.91.24-8.62C17.18 8.06 14.28 6.4 11.08 6.6c-3.2.21-6.09 2.1-7.57 4.96l-2.02-.92c1.7-3.28 5.02-5.46 8.7-5.7 3.68-.24 7.24 1.51 9.3 4.58z" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Get Banter</h3>
+                    <p class="step-description">Download the base game from Steam. It's free-to-play!</p>
+                    <a href="https://store.steampowered.com/app/2564460/Banter" target="_blank" class="step-link">Steam
+                        Store</a>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Download Icon -->
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Install Mod</h3>
+                    <p class="step-description">Choose a mod from our list below and click "Download".</p>
+                    <a href="#plugins" class="step-link">Browse Mods</a>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Join Icon -->
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">How to Join</h3>
+                    <p class="step-description">Hop into the same room and let the chaos begin.</p>
+                    <a href="#" class="step-link" onclick="showJoinInfo(); return false;">How to join a friend?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge modern-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right: 6px; vertical-align: text-bottom;">
+                        <path d="M6 3h12l4 6-10 13L2 9z"></path>
+                    </svg>
+                    Modern Features
+                </span>
+                <h2 class="section-title">Why Choose <span class="gradient-text modern-gradient">BanterVR Plugin</span>?
+                </h2>
+                <p class="section-description">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right: 8px; vertical-align: text-bottom; color: var(--primary-color);">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    Professional tools designed to enhance your virtual reality experience
+                    with cutting-edge technology
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/secure_auth.png" alt="Secure Authentication" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/667eea/ffffff.png?text=Secure+Auth\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Secure Authentication</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Enterprise-grade security with encrypted connections and
+                                verified
+                                user access control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/performance.png" alt="Performance Boost" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/764ba2/ffffff.png?text=Performance\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Performance Boost</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Real-time FPS monitoring and automatic optimization for
+                                smooth
+                                gameplay experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/protection.png" alt="Advanced Protection" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/f72585/ffffff.png?text=Protection\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Advanced Protection</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Built-in safety features ensure secure usage without
+                                compromising
+                                your account.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/management.png" alt="Easy Management" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/4facfe/ffffff.png?text=Management\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Easy Management</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Install and manage 150+ plugins with just one click through
+                                our
+                                intuitive interface.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/analytics.png" alt="Real-time Analytics" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/e0c3fc/ffffff.png?text=Analytics\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Real-time Analytics</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Monitor live performance metrics and system resources with
+                                detailed analytics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card character-card">
+                    <div class="feature-image-wrapper">
+                        <img src="images/integration.png" alt="Seamless Integration" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/8ec5fc/ffffff.png?text=Integration\n(Add+Image)'">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Seamless Integration</h3>
+                        <button class="feature-detail-btn" onclick="toggleFeature(this)">
+                            <span>View Details</span>
+                            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="feature-detail-content">
+                            <p class="feature-description">Perfect compatibility with BanterVR client for optimal
+                                performance and stability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plugins" class="plugins">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge modern-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"
+                        style="margin-right: 6px;">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                    Featured Plugins
+                </span>
+                <h2 class="section-title">Featured <span class="gradient-text modern-gradient">Plugins</span></h2>
+                <div class="section-description-wrapper"
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"
+                        style="color: #FFD700;">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                        </path>
+                    </svg>
+                    <p class="section-description" style="margin: 0; font-size: 1.15rem; opacity: 0.9;">Carefully
+                        curated plugins to enhance your BanterVR
+                        experience with the latest features</p>
+                </div>
+            </div>
+            <div class="plugins-grid">
+                <!-- Plugin Cards -->
+                <div class="plugin-card character-card plugin-variant">
+                    <div class="plugin-image-wrapper">
+                        <img src="images/plugin_avatar.png" alt="Avatar Optimizer Pro" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/ffd700/333333.png?text=Avatar\n(Add+Image)'">
+                        <div class="plugin-badge premium">Premium</div>
+                    </div>
+                    <div class="plugin-content">
+                        <h3 class="plugin-title">Avatar Optimizer Pro</h3>
+                        <p class="plugin-description">Automatically optimize avatar performance while maintaining visual
+                            quality.</p>
+                        <div class="plugin-button-wrapper">
+                            <a href="#download" class="btn-plugin">Install Plugin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plugin-card character-card plugin-variant">
+                    <div class="plugin-image-wrapper">
+                        <img src="images/plugin_performance.png" alt="Performance Booster" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/ff4500/ffffff.png?text=Boost\n(Add+Image)'">
+                        <div class="plugin-badge active">Popular</div>
+                    </div>
+                    <div class="plugin-content">
+                        <h3 class="plugin-title">Performance Booster</h3>
+                        <p class="plugin-description">Real-time FPS tracking, memory usage monitoring, and detailed
+                            performance analytics.</p>
+                        <div class="plugin-button-wrapper">
+                            <a href="#download" class="btn-plugin">Install Plugin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plugin-card character-card plugin-variant">
+                    <div class="plugin-image-wrapper">
+                        <img src="images/plugin_world.png" alt="World Explorer Pro" class="feature-character-img"
+                            onerror="this.src='https://placehold.co/300x400/00bfff/ffffff.png?text=Explorer\n(Add+Image)'">
+                        <div class="plugin-badge premium">Premium</div>
+                    </div>
+                    <div class="plugin-content">
+                        <h3 class="plugin-title">World Explorer Pro</h3>
+                        <p class="plugin-description">Advanced world information display with player tracking and
+                            navigation assistance.</p>
+                        <div class="plugin-button-wrapper">
+                            <a href="#download" class="btn-plugin">Install Plugin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-wrapper">
+                <div class="download-grid">
+                    <div class="download-content">
+                        <span class="section-badge modern-badge">Premium Download</span>
+                        <h2 class="section-title">Get <span class="gradient-text modern-gradient">BanterVR Plugin
+                                Manager</span></h2>
+                        <p class="section-description">Download the most advanced BanterVR plugin manager. Free,
+                            powerful, and easy to use.</p>
+                        <div class="download-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">125k+</span>
+                                <span class="stat-label">Downloads</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4.9/5</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        <div class="download-buttons">
+                            <button class="btn-download primary" onclick="openDownloadModal()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                                </svg>
+                                <span>Download Installer</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="download-visual">
+                        <img src="images/download_character_v2.png" alt="BanterVR Character"
+                            class="download-character-img"
+                            onerror="this.src='https://placehold.co/400x500/667eea/ffffff.png?text=Character'">
+                        <div class="visual-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-brand-text">
+                        <span class="footer-brand-name">BanterVR Plugin</span>
+                        <span class="footer-brand-tagline">Official Platform</span>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2026 BanterVR Plugin. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Modal for Step 3 (Join Guide) -->
+    <div id="joinIdModal" class="custom-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeJoinInfo()">&times;</span>
+            <div class="modal-header">
+                <h3>How to Join</h3>
+            </div>
+            <div class="modal-body">
+                <p>Instructions on how to join...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <!-- Download Modal -->
+    <div id="downloadModal" class="custom-modal">
+        <div class="modal-content premium-modal">
+            <span class="close-modal" onclick="closeDownloadModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon-wrapper">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                    </svg>
+                </div>
+                <h3>Ready to Install?</h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">To ensure the best experience, please confirm:</p>
+                <div class="modal-question">
+                    Do you have <strong>BanterVR</strong> installed on Steam?
+                </div>
+
+                <div class="modal-actions-grid">
+                    <button onclick="redirectToSteam()" class="btn-modal-secondary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.979 0C5.666 0 .506 4.908.034 11.137l6.095 8.905c1.29-.446 2.508-.344 3.793.18.57.234 1.13.57 1.636 1.05.514.484.9.99 1.146 1.547.25.56.37 1.124.363 1.695l-.004.576.012.046c4.254-.153 7.85-2.28 9.39-5.713 1.88-4.202.946-9.176-2.275-12.397C17.96 4.8 15.06 3.03 11.98 3.03z" />
+                        </svg>
+                        <div class="btn-text">
+                            <span>No, I don't</span>
+                            <small>Get it on Steam</small>
+                        </div>
+                    </button>
+
+                    <button onclick="proceedDownload()" class="btn-modal-primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <div class="btn-text">
+                            <span>Yes, I have it</span>
+                            <small>Start Download</small>
+                        </div>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Do you have the same mod as your friend? If so, you must enter the same room.</p>
+    </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

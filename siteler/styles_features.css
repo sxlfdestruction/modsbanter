@@ -1,0 +1,56 @@
+/* Feature Details Toggle */
+.feature-detail-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.feature-detail-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+}
+
+.feature-detail-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.feature-detail-content.active {
+    max-height: 150px;
+    /* Adjust based on content */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.feature-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-detail-btn.active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* Ensure card doesn't jump too much */
+.feature-card {
+    transition: all 0.3s ease;
+}
